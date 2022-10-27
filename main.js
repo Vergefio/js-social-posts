@@ -1,4 +1,4 @@
-const card = document.querySelector('.post');
+const card = document.getElementById('container');
 
 const posts = [
     {
@@ -69,7 +69,8 @@ console.log(posts);
 
 posts.forEach((cardPost) => {
     card.innerHTML += `
-    <div class="post__header">
+    <div class="post">
+        <div class="post__header">
                 <div class="post-meta">                    
                     <div class="post-meta__icon">
                         <img class="profile-pic" src="${cardPost.media}" alt="${cardPost.author.name}">                    
@@ -92,10 +93,11 @@ posts.forEach((cardPost) => {
                             <span class="like-button__label">Mi Piace</span>
                         </a>
                     </div>
-                    <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">${cardPost.likes}</b> persone
-                    </div>
-                </div> 
+                <div class="likes__counter">
+                Piace a <b id="like-counter-1" class="js-likes-counter">${cardPost.likes}</b> persone
+            </div>
+        </div> 
+    </div>             
     `
 });
 
