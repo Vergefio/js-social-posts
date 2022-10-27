@@ -76,7 +76,7 @@ posts.forEach((cardPost) => {
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${cardPost.author.name}</div>
-                        <div class="post-meta__time">${cardPost.created.reverseData}</div>
+                        <div class="post-meta__time">${reverseData(cardPost.created)}</div>
                     </div>                    
                 </div>
             </div>
@@ -99,6 +99,10 @@ posts.forEach((cardPost) => {
     `
 });
 
-function reverseData() {
-    document.getElementById(reverseData).innerHTML = reverseData(posts.created);
+//formattazione data
+function reverseData(dataDaFormattare) {
+
+    let parti = dataDaFormattare.split('-');
+
+    return parti[2] + '-' + parti[1] + '-' + parti[0];
 }
