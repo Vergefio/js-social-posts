@@ -76,7 +76,7 @@ posts.forEach((cardPost) => {
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${cardPost.author.name}</div>
-                        <div class="post-meta__time">4 mesi fa</div>
+                        <div class="post-meta__time">${cardPost.created}</div>
                     </div>                    
                 </div>
             </div>
@@ -98,3 +98,7 @@ posts.forEach((cardPost) => {
                 </div> 
     `
 });
+
+function itaDate() {
+    document.getElementById(newDate).innerHTML = posts.reverse("post-meta__time");
+}
